@@ -31,14 +31,21 @@
           padding: 10px;
           font size: 16 px;
           width: 50 px;
-          margin: 0;
+          margin-button; 10px
 
         }
-        h1{
 
-          color: rgb(97, 116, 179);
-        }
+         button{
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: rgb(80, 175, 199);
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgb(125, 147, 209);
+      }
 
+        
    </style>
 
 
@@ -50,8 +57,10 @@
 
       <h1>&#128536; Jogo de Adivinhação &#128514;</h1>   
       <p> Tente adivinhar o número secreto entre 1 a 100</p>
+
       <input type="number" id="TXTPalpite" min="1" max="100"/>
       <button id="BTNAdivinha">Adivinha</button>
+      <div classe="message" id="DIMensagem"> Mensagens p/ o jogador - TODO </div>
       
       </div>
 
