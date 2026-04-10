@@ -59,7 +59,7 @@
               <p> Tente adivinhar o número secreto entre 1 a 100</p>
 
               <input type="number" id="TXTPalpite" min="1" max="100"/>
-              <button id="BTNAdivinha" onclick="saudacaoDeBoasVindas()">Adivinha</button>
+              <button id="BTNAdivinha" onclick="verificarPalpite()">Adivinha</button>
               <div classe="message" id="DIMensagem"></div>
       
       </div>
@@ -68,8 +68,8 @@
 
   <script> 
 
-      function saudacaoDeBoasVindas(){
-          alert('passei por aqui!!');
+      function verificarPalpite(){
+          console.log('passei por aqui!!');
       }
 
   </script>
