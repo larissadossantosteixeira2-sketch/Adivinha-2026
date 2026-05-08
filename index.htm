@@ -1,77 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" >
     <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Jogo de Adivinhação </title>
-   
-   <style>
-        .corpoDaPagina{
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            background-color: rgb(161, 207, 245);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jogo de Adivinhação </title>
 
-        h1{
-          color:#096cff;
-        }
-        .container{
-           text-align: center;
-           background-color:rgb(57, 104, 145);
-           padding: 20px;
-           border-radius: 10px; 
-           box-shadow: 0px 0px 10pxc rgb(46, 145, 238)
-        }
+        <style>
+            .corpoDaPagina{
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
 
-        input[type="number"]{
-          padding: 10px;
-          font size: 16 px;
-          width: 50 px;
-          margin-button; 10px
+            h1{
+                color: #333;
+            }
 
-        }
+            .container{
+                text-align: center;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            }
 
-         button{
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: rgb(80, 175, 199);
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgb(125, 147, 209);
-      }
+            input[type="number"] {
+                padding: 10px;
+                font-size: 16px;
+                width: 50px;
+                margin-bottom: 10px;
+            }
 
-        
-   </style>
+            button{
+                padding: 10px 20px;
+                font-size:  16px;
+                cursor: pointer;
+                background-color: #28a745;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+            }
 
-
+            .mensagem{
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        </style>
     </head>
-     
-  <body class="corpoDaPagina"> 
+    
+    <body class="corpoDaPagina">
+        <div class="container">
+            <h1>&#129299; Jogo de Adivinhação &#128564;</h1>
+            <p>Tente adivinhar o número secreto entre 1 e 100</p>
+            <input type="number" id="TXTPalpite" min="1" max="100"/>
+            <button id="BTNAdivinhar" onclick="verificarPalpite()">Adivinhar</button>
+            <div class="mensagem" id="DIVMensagem"></div>
+        </div>
+    </body>
 
-      <div class="container">
 
-              <h1>&#128536; Jogo de Adivinhação &#128514;</h1>   
-              <p> Tente adivinhar o número secreto entre 1 a 100</p>
+    <script>
 
-              <input type="number" id="TXTPalpite" min="1" max="100"/>
-              <button id="BTNAdivinha" onclick="verificarPalpite()">Adivinha</button>
-              <div classe="message" id="DIMensagem"></div>
-      
-      </div>
+         function verificarPalpite(){
+            //----------------------------
+            // 1º Verificar se o jogador digitou 
+            //    algum numero na caixa de texto
+            //-----------------------------
+            let caixaDeTexto = document.getElementById('TXTPalpite');
+            let dvMensagem = document.getElementById('DIVMensagem');
 
-  </body>  
+            let chuteDoJogador = parseInt(caixaDeTexto.value);
 
-  <script> 
+            
+            if( isNaN(chuteDoJogador)  ){
+                dvMensagem.textContent = 'Numero inválido!!';
+            }else{
+                 dvMensagem.textContent = 'Numero Válido: '+chuteDoJogador;
+            }
+        
+         }
 
-      function verificarPalpite(){
-          console.log('passei por aqui!!');
-      }
+         
 
-  </script>
+
+    </script>
 
 </html>
