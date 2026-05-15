@@ -74,21 +74,12 @@
             let caixaDeTexto = document.getElementById('TXTPalpite');
             let dvMensagem = document.getElementById('DIVMensagem');
 
-            let chuteDoJogador = parseInt(caixaDeTexto.value);
-
- 
-            //valida se o chute do jogador é um numero e se está entre 1 e 100
-            if( isNaN(chuteDoJogador) || chuteDoJogador < 1 || chuteDoJogador > 100 ){
-                dvMensagem.textContent = 'Numero inválido!!';
-                return;
-            }     
+            let chuteDoJogador = parseInt(caixaDeTexto.value);    
               
             //Validação do número digitado. O campo não pode ser vazio e o número deve estar entre 1 a 100
             if( isNaN(chuteDoJogador) || chuteDoJogador < 1 || chuteDoJogador > 100){
                 dvMensagem.textContent = 'Porfavor, insira um número válido entre 1 e 100';
-            }else{
-                 dvMensagem.textContent = 'Numero Válido: '+chuteDoJogador;
-            }
+            }re
 
         
             if(chuteDoJogador === numeroSecreto){
