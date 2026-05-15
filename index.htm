@@ -64,7 +64,7 @@
 
 
     <script>
-         let numeroSecreto = math.floor(Math.random() * 100);
+         let numeroSecreto = Math.floor(Math.random() * 100);
 
          function verificarPalpite(){
             //----------------------------
@@ -74,22 +74,27 @@
             let caixaDeTexto = document.getElementById('TXTPalpite');
             let dvMensagem = document.getElementById('DIVMensagem');
 
-            let chuteDoJogador = parseInt(caixaDeTexto.value);    
-              
-            //Validação do número digitado. O campo não pode ser vazio e o número deve estar entre 1 a 100
-            if( isNaN(chuteDoJogador) || chuteDoJogador < 1 || chuteDoJogador > 100){
+            let chuteDoJogador = parseInt(caixaDeTexto.value);
+
+            //Validação do número digitado. O campo não pode ser vazio e o número deve estar entre 0 e 100
+            if( isNaN(chuteDoJogador) || chuteDoJogador < 1 ||  chuteDoJogador > 100){
                 dvMensagem.textContent = 'Porfavor, insira um número válido entre 1 e 100';
-            }re
-
-        
+                return;
+            }
+            
             if(chuteDoJogador === numeroSecreto){
-              dvMensagem.textContent = 'Parabéns! Você acertou o número secreto '+numeroSecreto;
+                dvMensagem.textContent = 'Parabéns! você acertou o numero secreto '+numeroSecreto;
             }else{
-              dvMensagem.textContent = 'Voce errou!';
-            } 
-          }
+                dvMensagem.textContent = 'Errou!';
+            }
+        
+         }
          
+         function desabilitarJogo(){
+          document.getElementById('BTNAdivinhar').disabled = true;
+          document.getElementById('TXYPalpite').disabld = true;
 
+         }
 
     </script>
 
